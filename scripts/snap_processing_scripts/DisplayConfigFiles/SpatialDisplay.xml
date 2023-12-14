@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<gridDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
+	<title>Earth Observation</title>
+	<defaults>
+		<plotGroupId>Earth Observation Data</plotGroupId>
+		<geoMap>
+			<geoDatum>WGS 1984</geoDatum>
+			<defaultExtent id="Yukon_Wx">
+				<left>165</left>
+				<right>-85</right>
+				<top>80</top>
+				<bottom>45</bottom>
+			</defaultExtent>
+			<extraExtent id="Yukon Territory">
+				<left>-141.2</left>
+				<right>-123.9</right>
+				<top>69.7</top>
+				<bottom>59.9</bottom>
+			</extraExtent>
+			<extraExtent id="MESHYukon">
+				<left>-150</left>
+				<right>-120</right>
+				<top>67</top>
+				<bottom>57</bottom>
+			</extraExtent>
+			<extraExtent id="Canada">
+				<left>-152</left>
+				<right>-47</right>
+				<top>40</top>
+				<bottom>75</bottom>
+			</extraExtent>
+			<extraExtent id="World">
+				<left>-180</left>
+				<right>180</right>
+				<top>90</top>
+				<bottom>-70</bottom>
+			</extraExtent>
+			<extraExtent id="Yukon" name="Yukon River - EO Tiles">
+				<left>-141.1</left>
+				<right>-137.2</right>
+				<top>64.75</top>
+				<bottom>62.7</bottom>
+			</extraExtent>
+			<extraExtent id="Porcupine" name="Porcupine River - EO Tiles">
+				<left>-141.00</left>
+				<right>-137.4</right>
+				<top>67.69</top>
+				<bottom>66.47</bottom>
+			</extraExtent>
+			<scaleBarVisible>true</scaleBarVisible>
+			<northArrowVisible>true</northArrowVisible>
+			<labelsVisible>true</labelsVisible>
+			<backgroundColor>light steel blue1</backgroundColor>
+			<openStreetMapLayer id="Open Street Map">
+				<url>https://tile.openstreetmap.org</url>
+				<visible>true</visible>
+				<cacheDir>$MAPLAYERSCACHE_FOLDER$/OSM</cacheDir>
+			</openStreetMapLayer>
+			<esriShapeLayer id="World Countries">
+				<description>World</description>
+				<file>WorldCountries.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>false</visible>
+				<toolTip>%CNTRY_NAME%</toolTip>
+				<lineColor>black</lineColor>
+				<fillColor>gray90</fillColor>
+				<opaquenessPercentage>80</opaquenessPercentage>
+			</esriShapeLayer>
+			<gridLayer/>
+			<esriShapeLayer id="Yukon Watersheds">
+				<description>Yukon Watersheds</description>
+				<file>MESHYukonBasins.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<toolTip>%DATASETNAM%</toolTip>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Yukon Waterbodies">
+				<description>Yukon Waterbodies</description>
+				<file>SurfaceWater.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>B5D0D0</lineColor>
+				<!-- <fillColor>B5D0D0</fillColor> -->
+				<!-- <opaquenessPercentage>20</opaquenessPercentage> -->
+			</esriShapeLayer>
+			<esriShapeLayer id="Canada">
+				<description>Canada</description>
+				<file>Canada.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Rivers" name="Rivers">
+				<description>Rivers</description>
+				<file>watercourse_1.shp</file>
+				<projectionFileAvailable>true</projectionFileAvailable>
+				<visible>false</visible>
+				<lineColor>B5D0D0</lineColor>
+				<lineWidth maxScale="100000" value="4"/>
+				<lineWidth maxScale="500000" value="2"/>
+				<lineWidth maxScale="3000000" value="1"/>
+			</esriShapeLayer>
+			<esriShapeLayer id="Waterbodies" name="Waterbodies">
+				<description>Waterbodies</description>
+				<file>waterbody_2.shp</file>
+				<projectionFileAvailable>true</projectionFileAvailable>
+				<visible>false</visible>
+				<toolTip>%name_en%</toolTip>
+				<lineColor>B5D0D0</lineColor>
+				<fillColor>B5D0D0</fillColor>
+				<opaquenessPercentage>100</opaquenessPercentage>
+			</esriShapeLayer>
+			<layerGroup id="Earth_Observation" name="Earth Observation Layers">
+				<esriShapeLayer id="Earth Observation Processing Tiles">
+					<description>Earth Observation Processing Tiles</description>
+					<file>EO_Processing_Tiles.shp</file>
+					<visible>false</visible>
+					<label>%FEWS_ID%</label>
+					<lineColor>purple</lineColor>
+				</esriShapeLayer>
+				<esriShapeLayer id="Sentinel-2 Image Boundaries">
+					<description>Sentinel-2 Image Boundaries</description>
+					<file>Sentinel2A_Image_Boundaries.shp</file>
+					<visible>false</visible>
+					<label>%ID_SEN2%</label>
+					<lineColor>gray</lineColor>
+				</esriShapeLayer>
+			</layerGroup>
+		</geoMap>
+		<timeDisplayLabels>bottomRight</timeDisplayLabels>
+	</defaults>
+	<gridPlotGroup id="Earth Observation Data" name="Earth Observation Data">
+		<gridPlotGroup id="EO Yukon" name="Yukon River">
+			<gridPlot id="RCM: Gamma0 HH">
+				<mapExtentId>Yukon</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_HH_dB</parameterId>
+					<locationSetId>RCM_Tiles_Yukon</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaHH_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="RCM: Gamma0 VV">
+				<mapExtentId>Yukon</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_VV_dB</parameterId>
+					<locationSetId>RCM_Tiles_Yukon</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaVV_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="RCM: Gamma0 CH">
+				<mapExtentId>Yukon</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_RCH_dB</parameterId>
+					<locationSetId>RCM_Tiles_Yukon</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaRCH_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="RCM: Gamma0 CV">
+				<mapExtentId>Yukon</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_RCV_dB</parameterId>
+					<locationSetId>RCM_Tiles_Yukon</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaRCV_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-1: Gamma0 VV">
+				<mapExtentId>Yukon</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel1</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_VV_dB</parameterId>
+					<locationSetId>EO_Tiles_Yukon</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaVV_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: Natural Color">
+				<mapExtentId>Yukon</mapExtentId>
+				<dataLayer>
+					<redTimeSeriesSet>
+						<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Intensity_B4</parameterId>
+						<locationSetId>Sentinel2_Tiles_Yukon</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<relativeViewPeriod unit="week" end="52" start="-52"/>
+						<readWriteMode>read only</readWriteMode>
+						<multiplier>500</multiplier>
+						<incrementer>100</incrementer>
+					</redTimeSeriesSet>
+					<greenTimeSeriesSet>
+						<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Intensity_B3</parameterId>
+						<locationSetId>Sentinel2_Tiles_Yukon</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<relativeViewPeriod unit="week" end="52" start="-52"/>
+						<readWriteMode>read only</readWriteMode>
+						<multiplier>500</multiplier>
+						<incrementer>100</incrementer>
+					</greenTimeSeriesSet>
+					<blueTimeSeriesSet>
+						<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Intensity_B2</parameterId>
+						<locationSetId>Sentinel2_Tiles_Yukon</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<relativeViewPeriod unit="week" end="52" start="-52"/>
+						<readWriteMode>read only</readWriteMode>
+						<multiplier>500</multiplier>
+						<incrementer>100</incrementer>
+					</blueTimeSeriesSet>
+				</dataLayer>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: B2 (Blue)">
+				<mapExtentId>Yukon</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Intensity_B2</parameterId>
+					<locationSetId>Sentinel2_Tiles_Yukon</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_B2</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: B3 (Green)">
+				<mapExtentId>Yukon</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Intensity_B3</parameterId>
+					<locationSetId>Sentinel2_Tiles_Yukon</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_B3</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: B4 (Red)">
+				<mapExtentId>Yukon</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Intensity_B4</parameterId>
+					<locationSetId>Sentinel2_Tiles_Yukon</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_B4</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="EO Porcupine" name="Porcupine River">
+			<gridPlot id="RCM: Gamma0 HH">
+				<mapExtentId>Porcupine</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_HH_dB</parameterId>
+					<locationSetId>RCM_Tiles_Porcupine</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaHH_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="RCM: Gamma0 VV">
+				<mapExtentId>Porcupine</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_VV_dB</parameterId>
+					<locationSetId>RCM_Tiles_Porcupine</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaVV_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="RCM: Gamma0 CH">
+				<mapExtentId>Porcupine</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_RCH_dB</parameterId>
+					<locationSetId>RCM_Tiles_Porcupine</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaRCH_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="RCM: Gamma0 CV">
+				<mapExtentId>Porcupine</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_RCV_dB</parameterId>
+					<locationSetId>RCM_Tiles_Porcupine</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaRCV_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-1: Gamma0 VV">
+				<mapExtentId>Porcupine</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel1</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_VV_dB</parameterId>
+					<locationSetId>EO_Tiles_Porcupine</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaVV_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: Natural Color">
+				<mapExtentId>Porcupine</mapExtentId>
+				<dataLayer>
+					<redTimeSeriesSet>
+						<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Intensity_B4</parameterId>
+						<locationSetId>Sentinel2_Tiles_Porcupine</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<relativeViewPeriod unit="week" end="52" start="-52"/>
+						<readWriteMode>read only</readWriteMode>
+						<multiplier>500</multiplier>
+						<incrementer>100</incrementer>
+					</redTimeSeriesSet>
+					<greenTimeSeriesSet>
+						<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Intensity_B3</parameterId>
+						<locationSetId>Sentinel2_Tiles_Porcupine</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<relativeViewPeriod unit="week" end="52" start="-52"/>
+						<readWriteMode>read only</readWriteMode>
+						<multiplier>500</multiplier>
+						<incrementer>100</incrementer>
+					</greenTimeSeriesSet>
+					<blueTimeSeriesSet>
+						<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Intensity_B2</parameterId>
+						<locationSetId>Sentinel2_Tiles_Porcupine</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<relativeViewPeriod unit="week" end="52" start="-52"/>
+						<readWriteMode>read only</readWriteMode>
+						<multiplier>500</multiplier>
+						<incrementer>100</incrementer>
+					</blueTimeSeriesSet>
+				</dataLayer>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: B2 (Blue)">
+				<mapExtentId>Porcupine</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Intensity_B2</parameterId>
+					<locationSetId>Sentinel2_Tiles_Porcupine</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_B2</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: B3 (Green)">
+				<mapExtentId>Porcupine</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Intensity_B3</parameterId>
+					<locationSetId>Sentinel2_Tiles_Porcupine</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_B3</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: B4 (Red)">
+				<mapExtentId>Porcupine</mapExtentId>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Intensity_B4</parameterId>
+					<locationSetId>Sentinel2_Tiles_Porcupine</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_B4</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="EO PriorityTiles" name="Priority Tiles">
+			<gridPlot id="RCM: Gamma0 HH">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_HH_dB</parameterId>
+					<locationSetId>RCM_Tiles_PriorityTiles</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaHH_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="RCM: Gamma0 VV">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_VV_dB</parameterId>
+					<locationSetId>RCM_Tiles_PriorityTiles</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaVV_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="RCM: Gamma0 CH">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_RCH_dB</parameterId>
+					<locationSetId>RCM_Tiles_PriorityTiles</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaRCH_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="RCM: Gamma0 CV">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRCM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_RCV_dB</parameterId>
+					<locationSetId>RCM_Tiles_PriorityTiles</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>attribution_RCM.jpg</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaRCV_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-1: Gamma0 VV">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel1</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Gamma0_VV_dB</parameterId>
+					<locationSetId>EO_Tiles_PriorityTiles</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_GammaVV_dB</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: Natural Color">
+				<dataLayer>
+					<redTimeSeriesSet>
+						<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Intensity_B4</parameterId>
+						<locationSetId>Sentinel2_Tiles_PriorityTiles</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<relativeViewPeriod unit="week" end="52" start="-52"/>
+						<readWriteMode>read only</readWriteMode>
+						<multiplier>500</multiplier>
+						<incrementer>100</incrementer>
+					</redTimeSeriesSet>
+					<greenTimeSeriesSet>
+						<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Intensity_B3</parameterId>
+						<locationSetId>Sentinel2_Tiles_PriorityTiles</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<relativeViewPeriod unit="week" end="52" start="-52"/>
+						<readWriteMode>read only</readWriteMode>
+						<multiplier>500</multiplier>
+						<incrementer>100</incrementer>
+					</greenTimeSeriesSet>
+					<blueTimeSeriesSet>
+						<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Intensity_B2</parameterId>
+						<locationSetId>Sentinel2_Tiles_PriorityTiles</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<relativeViewPeriod unit="week" end="52" start="-52"/>
+						<readWriteMode>read only</readWriteMode>
+						<multiplier>500</multiplier>
+						<incrementer>100</incrementer>
+					</blueTimeSeriesSet>
+				</dataLayer>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: B2 (Blue)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Intensity_B2</parameterId>
+					<locationSetId>Sentinel2_Tiles_PriorityTiles</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_B2</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: B3 (Green)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Intensity_B3</parameterId>
+					<locationSetId>Sentinel2_Tiles_PriorityTiles</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_B3</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Sentinel-2: B4 (Red)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSentinel2</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Intensity_B4</parameterId>
+					<locationSetId>Sentinel2_Tiles_PriorityTiles</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="week" end="52" start="-52"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<logo>
+					<imageFile>logo_sentinel.png</imageFile>
+					<position>bottomRight</position>
+				</logo>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Intensity_B4</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+	</gridPlotGroup>
+</gridDisplay>

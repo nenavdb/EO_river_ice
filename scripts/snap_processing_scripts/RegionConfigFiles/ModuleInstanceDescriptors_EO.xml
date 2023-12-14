@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 rel. 4 (x64) (http://www.altova.com) by Ben Balk (Deltares USA, Inc.) -->
+<moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
+	<!-- Download, process, and import earth observation data. -->
+	<moduleInstanceDescriptor id="RetrieveSentinel_Yukon">
+		<description>Sentinel Import ModuleDataSetFile for Yukon</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveSentinel_Porcupine">
+		<description>Sentinel Import ModuleDataSetFile for Porcupine</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveSentinel1">
+		<description>Retrieve Sentinel-1 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveSentinel2">
+		<description>Retrieve Sentinel-2 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveRCM">
+		<description>Retrieve RCM imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PurgeFolderSentinel">
+		<description>Purge the processed or raw folders for Sentinel images</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PurgeFolderSentinel_work">
+		<description>Purge the workdir for Sentinel images</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveProcessSentinel2">
+		<description>Retrieve and Process Sentinel-2 imagery (fast internet method)</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessSentinel1">
+		<description>Pre-Process Sentinel-1 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessSentinel2">
+		<description>Pre-Process Sentinel-2 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_EO_data">
+		<description>Moduledataset file that creates the subdirectories for temporarily saving EO data on FSSes before processing</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RCM_Subfolders">
+		<description>Moduledataset file that creates the RCM subdirectories</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PurgeFolderRCM">
+		<description>Purge the processed or raw folders for RCM images</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PurgeFolderRCM_work">
+		<description>Purge the workdir for RCM images</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessRCM">
+		<description>Pre-Process RCM imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RenameSentinel2">
+		<description>Rename Processed Sentinel-2 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RenameRCM">
+		<description>Rename Processed RCM imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportSentinel1">
+		<description>Import for Sentinel-1 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportSentinel2">
+		<description>Import for Sentinel-2 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportRCM">
+		<description>Import RCM imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="snap_gpt">
+		<description>ModuleDataSetFile for SNAP GPT scripts and templates</description>
+	</moduleInstanceDescriptor>
+</moduleInstanceDescriptors>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<locationSets version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locationSets.xsd">
+	<!-- Earth observation tiles -->
+	<locationSet id="EO_Tiles">
+		<csvFile>
+			<file>tiles_earth_observation.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%FEWS_ID%</id>
+			<name>%FEWS_ID%</name>
+			<shortName>%FEWS_ID%</shortName>
+			<x>%X%</x>
+			<y>%Y%</y>
+			<attribute id="REGION">
+				<text>%REGION%</text>
+			</attribute>
+			<attribute id="X_MIN">
+				<number>%EXT_MIN_X%</number>
+			</attribute>
+			<attribute id="X_MAX">
+				<number>%EXT_MAX_X%</number>
+			</attribute>
+			<attribute id="Y_MIN">
+				<number>%EXT_MIN_Y%</number>
+			</attribute>
+			<attribute id="Y_MAX">
+				<number>%EXT_MAX_Y%</number>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="RCM_Tiles">
+		<csvFile>
+			<file>tiles_rcm.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%COMBO%</id>
+			<name>%COMBO%</name>
+			<shortName>%COMBO%</shortName>
+			<x>%X%</x>
+			<y>%Y%</y>
+			<attribute id="REGION">
+				<text>%REGION%</text>
+			</attribute>
+			<attribute id="EARTH_OBSERVATION_TILE">
+				<text>%FEWS_ID%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="Sentinel2_Tiles">
+		<csvFile>
+			<file>tiles_sentinel2.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%COMBO%</id>
+			<name>%COMBO%</name>
+			<shortName>%COMBO%</shortName>
+			<x>%X%</x>
+			<y>%Y%</y>
+			<attribute id="REGION">
+				<text>%REGION%</text>
+			</attribute>
+			<attribute id="EARTH_OBSERVATION_TILE">
+				<text>%FEWS_ID%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="EO_Tiles_Yukon">
+		<locationSetId>EO_Tiles</locationSetId>
+		<constraints>
+			<attributeTextEquals id="REGION" equals="Yukon"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="RCM_Tiles_Yukon">
+		<locationSetId>RCM_Tiles</locationSetId>
+		<constraints>
+			<attributeTextEquals id="REGION" equals="Yukon"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="Sentinel2_Tiles_Yukon">
+		<locationSetId>Sentinel2_Tiles</locationSetId>
+		<constraints>
+			<attributeTextEquals id="REGION" equals="Yukon"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="EO_Tiles_Porcupine">
+		<locationSetId>EO_Tiles</locationSetId>
+		<constraints>
+			<attributeTextEquals id="REGION" equals="Porcupine"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="RCM_Tiles_Porcupine">
+		<locationSetId>RCM_Tiles</locationSetId>
+		<constraints>
+			<attributeTextEquals id="REGION" equals="Porcupine"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="Sentinel2_Tiles_Porcupine">
+		<locationSetId>Sentinel2_Tiles</locationSetId>
+		<constraints>
+			<attributeTextEquals id="REGION" equals="Porcupine"/>
+		</constraints>
+	</locationSet>
+	<!--DEFINE PRIORITY TILES HERE (3x, all should match. Only the first locationSet is used for downloading images, the other two are for display.) -->
+	<locationSet id="EO_Tiles_PriorityTiles">
+		<locationId>YU02</locationId>
+		<locationId>YU08</locationId>
+		<locationId>PO02</locationId>
+		<locationId>PO07</locationId>
+	</locationSet>
+	<locationSet id="RCM_Tiles_PriorityTiles">
+		<locationSetId>RCM_Tiles</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="EARTH_OBSERVATION_TILE" equals="YU02"/>
+				<attributeTextEquals id="EARTH_OBSERVATION_TILE" equals="YU08"/>
+				<attributeTextEquals id="EARTH_OBSERVATION_TILE" equals="PO02"/>
+				<attributeTextEquals id="EARTH_OBSERVATION_TILE" equals="PO07"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="Sentinel2_Tiles_PriorityTiles">
+		<locationSetId>Sentinel2_Tiles</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="EARTH_OBSERVATION_TILE" equals="YU02"/>
+				<attributeTextEquals id="EARTH_OBSERVATION_TILE" equals="YU08"/>
+				<attributeTextEquals id="EARTH_OBSERVATION_TILE" equals="PO02"/>
+				<attributeTextEquals id="EARTH_OBSERVATION_TILE" equals="PO07"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+</locationSets>

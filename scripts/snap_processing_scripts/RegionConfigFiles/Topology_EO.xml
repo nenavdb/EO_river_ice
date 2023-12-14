@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<topology xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/topology.xsd">
+	<enableAutoRun>false</enableAutoRun>
+	<enableAutoSelectParameters>true</enableAutoSelectParameters>
+	<enableSelectNodesFromMap>false</enableSelectNodesFromMap>
+		<nodes id="Earth Observation River Ice" name="Import Earth Observation Data">
+			<nodes id="EO Yukon" name="Yukon River">
+				<node id="RetrieveSentinel1_Yukon" name="Sentinel-1: Download">
+					<workflowId>RetrieveSentinel1_Yukon</workflowId>
+					<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="ImportSentinel1_Yukon" name="Sentinel-1: Process &amp; Import">
+					<workflowId>ImportSentinel1_Yukon</workflowId>
+					<localRun>false</localRun>
+				</node>
+				<node id="RetrieveSentinel2_Yukon" name="Sentinel-2: Download">
+					<workflowId>RetrieveSentinel2_Yukon</workflowId>
+					<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="ImportSentinel2_Yukon" name="Sentinel-2: Process &amp; Import">
+					<workflowId>ImportSentinel2_Yukon</workflowId>
+					<localRun>false</localRun>
+				</node>
+				<node id="RetrieveImportSentinel2_FastInternet_Yukon" name="Sentinel-2: Download, Process &amp; Import (fast internet)">
+					<workflowId>RetrieveImportSentinel2_FastInternet_Yukon</workflowId>
+					<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="RetrieveRCM_Yukon" name="RCM: Download">
+					<workflowId>RetrieveRCM_Yukon</workflowId>
+					<relativePeriod unit="hour" start="-$RCM_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="ImportRCM_Yukon" name="RCM: Process &amp; Import">
+					<workflowId>ImportRCM_Yukon</workflowId>
+					<localRun>false</localRun>
+				</node>
+			</nodes>
+			<nodes id="EO Porcupine" name="Porcupine River">
+				<node id="RetrieveSentinel1_Porcupine" name="Sentinel-1: Download">
+					<workflowId>RetrieveSentinel1_Porcupine</workflowId>
+					<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="ImportSentinel1_Porcupine" name="Sentinel-1: Process &amp; Import">
+					<workflowId>ImportSentinel1_Porcupine</workflowId>
+					<localRun>false</localRun>
+				</node>
+				<node id="RetrieveSentinel2_Porcupine" name="Sentinel-2: Download">
+					<workflowId>RetrieveSentinel2_Porcupine</workflowId>
+					<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="ImportSentinel2_Porcupine" name="Sentinel-2: Process &amp; Import">
+					<workflowId>ImportSentinel2_Porcupine</workflowId>
+					<localRun>false</localRun>
+				</node>
+				<node id="RetrieveImportSentinel2_FastInternet_Porcupine" name="Sentinel-2: Download, Process &amp; Import (fast internet)">
+					<workflowId>RetrieveImportSentinel2_FastInternet_Porcupine</workflowId>
+					<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="RetrieveRCM_Porcupine" name="RCM: Download">
+					<workflowId>RetrieveRCM_Porcupine</workflowId>
+					<relativePeriod unit="hour" start="-$RCM_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="ImportRCM_Porcupine" name="RCM: Process &amp; Import">
+					<workflowId>ImportRCM_Porcupine</workflowId>
+					<localRun>false</localRun>
+				</node>
+			</nodes>
+			<nodes id="EO PriorityTiles" name="Priority Tiles">
+				<node id="RetrieveSentinel1_PriorityTiles" name="Sentinel-1: Download">
+					<workflowId>RetrieveSentinel1_PriorityTiles</workflowId>
+					<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="ImportSentinel1_PriorityTiles" name="Sentinel-1: Process &amp; Import">
+					<workflowId>ImportSentinel1_PriorityTiles</workflowId>
+					<localRun>false</localRun>
+				</node>
+				<node id="RetrieveSentinel2_PriorityTiles" name="Sentinel-2: Download">
+					<workflowId>RetrieveSentinel2_PriorityTiles</workflowId>
+					<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="ImportSentinel2_PriorityTiles" name="Sentinel-2: Process &amp; Import">
+					<workflowId>ImportSentinel2_PriorityTiles</workflowId>
+					<localRun>false</localRun>
+				</node>
+				<node id="RetrieveImportSentinel2_FastInternet_PriorityTiles" name="Sentinel-2: Download, Process &amp; Import (fast internet)">
+					<workflowId>RetrieveImportSentinel2_FastInternet_PriorityTiles</workflowId>
+					<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="RetrieveRCM_PriorityTiles" name="RCM: Download">
+					<workflowId>RetrieveRCM_PriorityTiles</workflowId>
+					<relativePeriod unit="hour" start="-$RCM_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+					<localRun>false</localRun>
+				</node>
+				<node id="ImportRCM_PriorityTiles" name="RCM: Process &amp; Import">
+					<workflowId>ImportRCM_PriorityTiles</workflowId>
+					<localRun>false</localRun>
+				</node>
+			</nodes>
+		</nodes>
+</topology>

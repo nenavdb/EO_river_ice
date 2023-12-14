@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<parameterGroups version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
+	<parameterGroup id="Intensity">
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.0001</valueResolution>
+		<parameter id="Intensity_B2">
+			<shortName>Intensity (B2)</shortName>
+		</parameter>
+		<parameter id="Intensity_B3">
+			<shortName>Intensity (B3)</shortName>
+		</parameter>
+		<parameter id="Intensity_B4">
+			<shortName>Intensity (B4)</shortName>
+		</parameter>
+		<parameter id="Gamma0_VV">
+			<shortName>Gamma0 VV</shortName>
+		</parameter>
+		<parameter id="Gamma0_VH">
+			<shortName>Gamma0 VH</shortName>
+		</parameter>
+		<parameter id="Gamma0_HV">
+			<shortName>Gamma0 HV</shortName>
+		</parameter>
+		<parameter id="Gamma0_HH">
+			<shortName>Gamma0 HH</shortName>
+		</parameter>
+		<parameter id="Gamma0_RCH">
+			<shortName>Gamma0 RCH</shortName>
+		</parameter>
+		<parameter id="Gamma0_RCV">
+			<shortName>Gamma0 RCV</shortName>
+		</parameter>
+		<parameter id="Sigma0_RCH">
+			<shortName>Sigma0 RCH</shortName>
+		</parameter>
+		<parameter id="Sigma0_RCV">
+			<shortName>Sigma0 RCV</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Intensity_db">
+		<parameterType>instantaneous</parameterType>
+		<unit>dB</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="Gamma0_VV_dB">
+			<shortName>Gamma0 VV (dB)</shortName>
+		</parameter>
+		<parameter id="Gamma0_VH_dB">
+			<shortName>Gamma0 VH (dB)</shortName>
+		</parameter>
+		<parameter id="Gamma0_HV_dB">
+			<shortName>Gamma0 HV (dB)</shortName>
+		</parameter>
+		<parameter id="Gamma0_HH_dB">
+			<shortName>Gamma0 HH (dB)</shortName>
+		</parameter>
+		<parameter id="Gamma0_RCH_dB">
+			<shortName>Gamma0 RCH (dB)</shortName>
+		</parameter>
+		<parameter id="Gamma0_RCV_dB">
+			<shortName>Gamma0 RCV (dB)</shortName>
+		</parameter>
+		<parameter id="Sigma0_RCH_dB">
+			<shortName>Sigma0 RCH (dB)</shortName>
+		</parameter>
+		<parameter id="Sigma0_RCV_dB">
+			<shortName>Sigma0 RCV (dB)</shortName>
+		</parameter>
+	</parameterGroup>
+</parameterGroups>

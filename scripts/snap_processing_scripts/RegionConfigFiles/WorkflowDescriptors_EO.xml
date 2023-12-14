@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
+	<!--Download, process, and import earth observation data. -->
+	<workflowDescriptor id="RetrieveImportSentinel1_Scheduled" name="Download and Process Sentinel-1 (Scheduled Task)" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import Sentinel-1 (for scheduled task) (using ingestion date/time)</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportSentinel1_Scheduled_PriorityTiles" name="Download and Process Sentinel-1 (Scheduled Task) - Priority Tiles" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import Sentinel-1 (for scheduled task) (using ingestion date/time) - Priority Tiles only</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportSentinel2_Scheduled" name="Download and Process Sentinel-2 (Scheduled Task)" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import Sentinel-2 (for scheduled task) (using ingestion date/time)</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportSentinel2_Scheduled_PriorityTiles" name="Download and Process Sentinel-2 (Scheduled Task) - Priority Tiles" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import Sentinel-2 (for scheduled task) (using ingestion date/time) - Priority Tiles only</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportSentinel2_Scheduled_FastInternet" name="Download and Process Sentinel-2 (Scheduled Task) - fast internet" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import Sentinel-2 (for scheduled task) (using ingestion date/time) - fast internet</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportSentinel2_Scheduled_FastInternet_PriorityTiles" name="Download and Process Sentinel-2 (Scheduled Task) - fast internet - Priority Tiles" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import Sentinel-2 (for scheduled task) (using ingestion date/time) - fast internet - Priority Tiles only</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportRCM_Scheduled" name="Download and Process RCM (Scheduled Task)" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import RCM (for scheduled task) (using ingestion date/time)</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportRCM_Scheduled_PriorityTiles" name="Download and Process RCM (Scheduled Task) - Priority Tiles" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import RCM (for scheduled task) (using ingestion date/time) - Priority Tiles only</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveSentinel1_Yukon" name="Retrieve Sentinel-1" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_RetrieveSentinel1</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Yukon"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportSentinel1_Yukon" name="Import Sentinel-1" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_ImportSentinel1</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Yukon"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveSentinel2_Yukon" name="Retrieve Sentinel-2" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_RetrieveSentinel2</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Yukon"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportSentinel2_Yukon" name="Import Sentinel-2" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_ImportSentinel2</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Yukon"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportSentinel2_FastInternet_Yukon" name="Retrieve and Import Sentinel-2 (fast internet)" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_RetrieveImportSentinel2_FastInternet</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Yukon"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveRCM_Yukon" name="Retrieve RCM" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_RetrieveRCM</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Yukon"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportRCM_Yukon" name="Import RCM" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_ImportRCM</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Yukon"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveSentinel1_Porcupine" name="Retrieve Sentinel-1" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_RetrieveSentinel1</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Porcupine"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportSentinel1_Porcupine" name="Import Sentinel-1" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_ImportSentinel1</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Porcupine"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveSentinel2_Porcupine" name="Retrieve Sentinel-2" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_RetrieveSentinel2</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Porcupine"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportSentinel2_Porcupine" name="Import Sentinel-2" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_ImportSentinel2</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Porcupine"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportSentinel2_FastInternet_Porcupine" name="Retrieve and Import Sentinel-2 (fast internet)" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_RetrieveImportSentinel2_FastInternet</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Porcupine"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveRCM_Porcupine" name="Retrieve RCM" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_RetrieveRCM</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Porcupine"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportRCM_Porcupine" name="Import RCM" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_ImportRCM</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="Porcupine"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveSentinel1_PriorityTiles" name="Retrieve Sentinel-1" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportSentinel1_PriorityTiles" name="Import Sentinel-1" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_ImportSentinel1</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="PriorityTiles"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveSentinel2_PriorityTiles" name="Retrieve Sentinel-2" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportSentinel2_PriorityTiles" name="Import Sentinel-2" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_ImportSentinel2</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="PriorityTiles"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportSentinel2_FastInternet_PriorityTiles" name="Retrieve and Import Sentinel-2 (fast internet)" forecast="false" allowApprove="false" visible="true">
+		<workflowFileName>Template_Manual_RetrieveImportSentinel2_FastInternet</workflowFileName>
+		<properties>
+			<string key="REGION_NAME" value="PriorityTiles"/>
+		</properties>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveRCM_PriorityTiles" name="Retrieve RCM" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportRCM_PriorityTiles" name="Import RCM" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<rootNode>
+		<node name="Gridded Data Import (Earth Observation)">
+			<node name="Yukon River">
+				<workflowId>RetrieveSentinel1_Yukon</workflowId>
+				<workflowId>ImportSentinel1_Yukon</workflowId>
+				<workflowId>RetrieveSentinel2_Yukon</workflowId>
+				<workflowId>ImportSentinel2_Yukon</workflowId>
+				<workflowId>RetrieveImportSentinel2_FastInternet_Yukon</workflowId>
+				<workflowId>RetrieveRCM_Yukon</workflowId>
+				<workflowId>ImportRCM_Yukon</workflowId>
+			</node>
+			<node name="Porcupine River">
+				<workflowId>RetrieveSentinel1_Porcupine</workflowId>
+				<workflowId>ImportSentinel1_Porcupine</workflowId>
+				<workflowId>RetrieveSentinel2_Porcupine</workflowId>
+				<workflowId>ImportSentinel2_Porcupine</workflowId>
+				<workflowId>RetrieveImportSentinel2_FastInternet_Porcupine</workflowId>
+				<workflowId>RetrieveRCM_Porcupine</workflowId>
+				<workflowId>ImportRCM_Porcupine</workflowId>
+			</node>
+			<node name="Priority Tiles">
+				<workflowId>RetrieveSentinel1_PriorityTiles</workflowId>
+				<workflowId>ImportSentinel1_PriorityTiles</workflowId>
+				<workflowId>RetrieveSentinel2_PriorityTiles</workflowId>
+				<workflowId>ImportSentinel2_PriorityTiles</workflowId>
+				<workflowId>RetrieveImportSentinel2_FastInternet_PriorityTiles</workflowId>
+				<workflowId>RetrieveRCM_PriorityTiles</workflowId>
+				<workflowId>ImportRCM_PriorityTiles</workflowId>
+			</node>
+		</node>
+	</rootNode>
+</workflowDescriptors>

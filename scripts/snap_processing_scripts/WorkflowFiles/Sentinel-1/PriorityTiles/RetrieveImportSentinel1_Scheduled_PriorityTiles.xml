@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<activity>
+		<properties>
+			<string key="MISSION" value="Sentinel-1"/>
+			<string key="REGION" value="PriorityTiles"/>
+			<string key="RAW_OR_PROCESSED" value="raw"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderSentinel</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderSentinel</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="PriorityTiles"/>
+			<string key="DOWNLOAD_TYPE" value="ingestion"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveSentinel1</moduleInstanceId>
+		<moduleConfigFileName>RetrieveSentinel1_loop</moduleConfigFileName>
+		<loopLocationSetId>EO_Tiles_PriorityTiles</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="MISSION" value="Sentinel-1"/>
+			<string key="REGION" value="PriorityTiles"/>
+			<string key="RAW_OR_PROCESSED" value="processed"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderSentinel</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderSentinel</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="MISSION" value="Sentinel-1"/>
+			<string key="REGION" value="PriorityTiles"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderSentinel_work</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderSentinel_work</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="PriorityTiles"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessSentinel1</moduleInstanceId>
+		<moduleConfigFileName>PreprocessSentinel1</moduleConfigFileName>
+		<loopLocationSetId>EO_Tiles_PriorityTiles</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="PriorityTiles"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportSentinel1</moduleInstanceId>
+		<moduleConfigFileName>ImportSentinel1</moduleConfigFileName>
+		<loopLocationSetId>EO_Tiles_PriorityTiles</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="MISSION" value="Sentinel-1"/>
+			<string key="REGION" value="PriorityTiles"/>
+			<string key="RAW_OR_PROCESSED" value="raw"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderSentinel</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderSentinel</moduleConfigFileName>
+	</activity>
+</workflow>
